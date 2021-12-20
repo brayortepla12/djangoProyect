@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from serviciosApp import models as modelsServicios
 
 def serviciosView(request):
-    return render(request,"servicios.html")
+
+    servicios = modelsServicios.misServicios.objects.all().order_by('id')
+    return render(request,"servicios.html",{'servicios':servicios})
+

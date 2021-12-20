@@ -1,16 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios</title>
 </head>
+
 <body>
     {% extends "base.html" %}
-
     {% block content %}
-    <div> SERVICIOS </div>
+
+    <main>
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">Servicios Shopty</h1><br>
+                    <p class="lead text-muted"> En SHOPTY impre pensamos en lo que necesitas, es por esto que te
+                        brindamos los mejores servicios para cada una de tus necesidades,
+                        no busques mas.</p>
+                    <p>
+                        <a href="#album" class="btn btn-lg btn-primary my-lg-3">Ver servisio</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div id="album" class="album py-5 bg-light">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    {% for servicio in servicios %}
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img alt="example" class="img-fluid rounded" src="{{servicio.imagen.url}}" />
+
+                            <div class="card-body">
+                                <h3>{{servicio.titulo}}</h3>
+                                <br>
+                                <p class="card-text">{{servicio.descrpcion}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </main>
+
     {% endblock %}
 </body>
+
 </html>
