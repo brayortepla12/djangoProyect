@@ -1,1 +1,1 @@
-from webApp.views import homeview
+from webApp.views import homeview,blogview,contactoview,tiendaview
